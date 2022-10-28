@@ -6,3 +6,15 @@ with open("test.txt") as f,open("out.txt","w") as fo:
         new_columns = [new_name,columns[1]]
         new_line = "\t".join(new_columns)
         fo.write(new_line)
+
+
+'''
+import pandas as pd
+
+in_file = "./test.txt"
+out_file = "out.txt"
+
+df = pd.read_csv(in_file, sep="\t", header=None)
+df.iloc[:, 1] = df.iloc[:, 1].str.replace("\..*", "")
+df.to_csv(out_file, sep="\t")
+'''
